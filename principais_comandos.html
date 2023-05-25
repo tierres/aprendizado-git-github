@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GIT - Comandos</title>
+</head>
+<body>
+  <h1>PRINCIPAIS COMANDOS DO GIT</h1>
+
+  <h3>Comandos Básicos</h3>
+  <ul>
+    <li><strong>cd nomeDoCaminho</strong> : usado para entrar nas pastas do computador</li>
+    <li><strong>cd ..</strong> : serve para retornar uma pasta</li>
+    <li><strong>ls</strong>: serve para visualizar o que tem na pasta em que você se encontra</li>
+    <li><strong>git config --list</strong> : exibe a lista de configurações atuais do git</li>
+    <li><strong>touch nomeDoArquivo.txt</strong> : cria um arquivo txt, docx ou rtf</li>
+    <li><strong>nano nomeDoArquivo</strong> : abre um editor para editar o arquivo. *OBS: Para sair do editor utilize CTRL + X</li>
+    <li><strong>git init</strong> : incia o Git na pasta que você está</li>
+    <li><strong>git status</strong> : verifica o status dos arquivos presentes na atual posição que não foram commitados. *OBS: você precisa estar em uma pasta que tenha um repositório git, ou seja que tenha sido iniciado o "git init"</li>
+    <li><strong>git add nomeDoArquivo</strong> : coloca o aquivo na área intermediária(staging), que fica antes de commitar o arquivo</li>
+    <li><strong>git add . </strong> : envia todos os arquivos para a área intermediária(staging) ao mesmo tempo</li>
+    <li><strong>git commit -m 'mensagem sobre o que foi alterado'</strong> : aqui você finalmente estará commitando o arquivo e escrevendo junto uma mensagem para o resto do time ler</li>
+  </ul>
+
+  <h3>Visualizando os logs</h3>
+  <ul>
+    <li><strong>git log</strong> : podemos ver os commits que aconteceram</li>
+    <li><strong>git log --stat</strong> : podemos ver os commits com mais detalhes(alterações, inserções e deletamentos)</li>
+    <li><strong>git log --pretty=oneline</strong> : podemos ver os commits resumidamente em 1 linha</li>
+  </ul>
+
+  <h3>Visualizando as diferenças</h3>
+  <ul>
+    <li><strong>git diff</strong> : mostra o que foi modificado nos arquivos</li>
+    <li><strong>git diff nomeDoArquivo</strong> : mostra o que foi modificado no arquivo específico</li>
+    <li><strong>git diff --name-only</strong> : mostra o nome dos arquivos que foram modificados</li>
+  </ul>
+
+  <h3>Desfazendo alterações</h3>
+  <ul>
+    <li><strong>git commit --amend</strong> : permite editar o último commit feito adicionando os arquivos que estão em staging e permite alterar a mensagem escrita no commit. *OBS: se você quiser modificar apenas a mensagem do commit utilize o mesmo comando sem ter arquivos na área staging</li>
+    <li><strong>git reset HEAD nomeDoArquivo</strong> : serve para retirar o arquivo de staging, ele vai continuar com as alterações, mas não vai poder receber um commit até que ele seja adicionado em staging de novo</li>
+    <li><strong>git checkout -- nomeDoArquivo</strong> : volta o arquivo para como ele era no último commit</li>
+  </ul>
+
+  <h3>Lidando com branchs</h3>
+  <ul>
+    <li><strong>git branch</strong> : mostra quais as branchs existem no projeto. *OBS: a branch "master" já vem ao criar o projeto</li>
+    <li><strong>git branch nomeDaBranch</strong> : cria uma nova branch</li>
+    <li><strong>git checkout nomeDaBranch</strong> : vai para a branch digitada</li>
+    <li><strong>git branch -d nomeDaBranch</strong> : deleta a branch digitada</li>
+    <li><strong>git checkout -b nomeDaBranch</strong> : cria e altera para uma nova branch</li>
+    <li><strong>git merge nomeDaBranch</strong> : Pega os dados da merge digitada e mescla com a merge da atual posição</li>
+  </ul>
+
+  <h3>Clonando um projeto</h3>
+  <ul>
+    <li><strong>git clone linkDoProjeto</strong> : clona qualquer projeto através do seu link retirado do github e conecta o projeto da nuvem com o do diretório em que foi executado o comando</li>
+  </ul>
+
+  <h3>Subindo um projeto para o GitHub</h3>
+  <ul>
+    <li><strong>git remote add origin linkDoNovoProjetoNaNuvem</strong> : conecta o projeto da máquina do usuário com o projeto na nuvem, no caso, o GitHub. OBS*: o link para conectar os dois está na página do novo projeto no github</li>
+    <li><strong>git push origin nomeDaBranch</strong> : esse comando sobe de fato o projeto para a origem(nesse caso, o github). *OBS: "origin" refere-se a origem setada pelo comando de cima(o link para onde vai o projeto). *OBS 2: "nomeDaBranch" refere-se para qual branch do projeto na nuvem vai os arquivos</li>
+  </ul>
+
+  <h3>Baixando as atualizações de um projeto</h3>
+  <ul>
+    <li><strong>git pull origin nomeDaBranch</strong> : baixa os códigos da branch digitada da origin(link do projeto no github). *OBS: caso os arquivos estejam exatamente igual vai aparecer "Already up to date."</li>
+  </ul>
+
+</body>
+</html>
